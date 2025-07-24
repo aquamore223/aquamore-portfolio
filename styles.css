@@ -1,0 +1,620 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    
+
+}
+body {
+    background-color: #f4f4f4;
+    line-height: 1.6;
+}
+/* Ensure the header uses flex to position the image and text side by side */
+header {
+    background: #2c3e50;
+    color: #fff;
+    display: flex;
+    align-items: center; 
+    flex-wrap: wrap;/* Vertically centers the logo and the text */
+}
+/* Base nav style */
+.nav {
+  display: flex;
+  gap: 20px;
+}
+
+/* Hide menu on small screens */
+@media (max-width: 768px) {
+  .nav {
+    display: none;
+    flex-direction: column;
+    background-color: #2c3e50;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 999;
+  }
+
+  .nav.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+  display: block !important;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  z-index: 1000;
+  color: #ffffff;
+  font-size: 2rem;
+}
+}
+
+/* Default hide hamburger on large screens */
+.menu-toggle {
+  display: none;
+}
+
+
+/* New container that groups the h1 and nav together */
+.header-text {
+    display: flex;
+    flex-direction: column; /* Stacks h1 over the nav */
+    align-items: center;    /* Centers the text and nav */
+    flex: 1;                /* Allows this container to fill available space next to the image */
+}
+
+/* Keep your h1 and any headings styled as needed */
+h1, h2, h3 {
+    color: #607088;
+    margin: 10px 0; /* Adjust margin for spacing */
+    text-align: center; /* Center the headings */
+    font-size: 2rem; /* Adjust font size as needed */
+    font-weight: bold; /* Make headings bold */
+
+}
+
+/* Style the nav list so the items line up in a row */
+nav ul {         /* Puts the list items in a row */
+    justify-content: center;
+    list-style: none;
+    padding: 5px ; /* Optional: Add some padding for spacing */
+    margin: 0;              /* Optional: Remove default margin if needed */
+}
+
+/* Style for the navigation links */
+nav ul li {
+    margin: 0 10px; 
+    padding: 5px;        /* Adjust spacing between navigation items */
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem; /* Adjust font size for better readability */
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+nav ul li a:hover { 
+    color: #e98277;
+}
+
+/* Existing styles for other elements can remain the same */
+.logo {
+    /* You can adjust as needed; remove height: 100vh if that stretches the image unnecessarily */
+    font-size: 25px;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+     height: 100vh;
+}
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;         /* Stack image + text */
+    align-items: center;            /* Center all content */
+    text-align: center;
+    padding: 15px;
+  }
+
+  .logo {
+    height: auto;                   /* Remove fixed height */
+    width: 80px;                    /* Shrink logo for mobile */
+    margin-bottom: 10px;
+  }
+
+  .header-text {
+    align-items: center;            /* Center h1 + nav */
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 1.5rem;              /* Reduce font size on phones */
+    margin-bottom: 10px;
+  }
+
+  nav ul {
+    display: flex;
+    flex-direction: column;         /* Stack nav items vertically */
+    align-items: center;
+    gap: 10px;                      /* Add spacing between items */
+    padding: 0;
+    margin: 0;
+  }
+
+  nav ul li {
+    margin: 0;
+    padding: 5px 0;
+  }
+
+  nav ul li a {
+    font-size: 1rem;                /* Slightly smaller font */
+  }
+}
+
+
+.span {
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+article {
+    background: #fff;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 5px;
+}
+aside {
+    background: #ecf0f1;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 5px;
+}
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+    nav ul li {
+        display: block;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    header, footer {
+        text-align: center;
+    }
+    nav ul li {
+        margin-right: 0;
+    }
+}
+@media (max-width: 1024px) {
+    .container {
+        width: 90%;
+    }
+    article, aside {
+        margin: 10px 0;
+    }
+}
+@media (min-width: 1200px) {
+    .container {
+        width: 70%;
+    }
+    nav ul li {
+        margin-right: 30px;
+    }
+}
+@media (min-width: 1600px) {
+    .container {
+        width: 60%;
+    }
+    header, footer {
+        padding: 30px 0;
+    }
+}
+.about {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+    margin: 20px 0;
+    color: #fff;
+    display: flex;
+    align-items: center;  /* Stack content vertically */
+    text-align: center; /* Center text for better readability */
+    flex-wrap: wrap; /* Allow content to wrap on smaller screens */
+    justify-content: center; /* Center content horizontally */
+}
+.about h2 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+.about p {
+    line-height: 1.8;
+    color: #252424;
+    font-size: 1.1rem; /* Slightly larger font for readability */
+    margin-right: 30px; /* Add some space between text and image */ 
+    margin-left: 30px; /* Add some space between text and image */
+    text-align: justify; /* Justify text for a cleaner look */
+    flex: 1; /* Allow text to take available space */
+    
+}
+.about-text {
+    flex: 1; /* Allow text to take available space */
+    padding: 20px;
+    text-align: center; /* Center text for better readability */
+    color: #2c3e50; /* Change text color for better contrast */
+    font-size: 1.1rem; /* Slightly larger font for readability */
+    line-height: 1.8; /* Improve line spacing for readability */
+    margin-right: 30px; /* Add some space between text and image */
+
+    
+}
+.profile img {
+    width: 250px;
+    height: auto;
+    border-radius: 5px;
+    margin-right: 20px; 
+    margin-left: 20px; /* Add some space between text and image */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for depth */
+    transition: transform 0.3s ease; /* Smooth zoom effect on hover */
+    cursor: pointer; /* Change cursor to pointer for better UX */
+    max-width: 100%; /* Ensure image is responsive */
+}
+@media screen and (max-width: 768px) {
+  .about {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px 10px;
+  }
+
+  .about-text {
+    margin: 0;
+    padding: 10px;
+  }
+
+  .about p {
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  .profile img {
+    margin: 20px 0;
+    width: 80%;
+    max-width: 300px;
+  }
+
+  .profile-caption {
+    font-size: 1rem;
+    margin-top: 10px;
+  }
+}
+.profile-caption {
+    font-size: 1.2rem; /* Adjust font size for better readability */
+    color: #2c3e50; /* Change text color for better contrast */
+    margin-top: 10px; /* Add some space above the caption */
+    text-align: center; /* Center the caption text */
+}
+.profile-picture-wrapper {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  border-radius: 5px;
+  width: 250px;
+  max-width: 100%;
+  margin: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.profile-picture-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(173, 216, 230, 0.25); /* Light blue tint */
+  z-index: 1;
+  transition: background-color 0.3s ease;
+}
+
+.profile-caption {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 3s ease;
+  z-index: 2;
+  position: relative;
+}
+
+.profile-picture-wrapper:hover::before {
+  background-color: rgba(0, 0, 0, 0); /* Remove tint on hover */
+}
+
+.profile-picture-wrapper:hover .profile-picture {
+  transform: scale(1.05); /* Zoom effect */
+}
+.profile-picture {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+.project {
+    background: #fff;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 5px;
+    display: flex; 
+    align-items: center; /* Center content horizontally */
+
+}
+.project-list {
+    display: flex;
+    flex-wrap: wrap; /* Allow projects to wrap on smaller screens */
+    justify-content: center; /* Center projects horizontally */
+}
+
+.project {
+    flex: 1; /* Allow projects to take available space */
+    max-width: 300px; /* Limit width for better layout */
+    margin: 10px; /* Add some space between projects */
+    text-align: center; /* Center text for better readability */
+}
+
+.project-item {
+   flex: 1 1 300px; /* Grow, shrink, base width */
+  max-width: 300px;
+  min-height: 250px;
+  background-color: #fff;
+  border: 5px solid #fff;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 10px;
+  margin: 10px; /* Add some space between project items */
+  }
+
+.project-item:hover {
+    transform: scale(1.05); /* Zoom effect on hover */
+    border: 1px solid #2c3e50;
+}
+
+
+
+.project h2 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+.project p {
+    line-height: 1.8;
+    color: #252424;
+    font-size: 1.1rem; /* Slightly larger font for readability */
+    text-align: center; /* Center text for better readability */
+    margin-bottom: 20px; /* Add some space below the paragraph */
+}
+.project img {
+    width: 100%;
+    height: auto;
+    display: block; /* Ensure image is displayed as a block element */  
+    margin: 0 auto; /* Center the image */
+    border: 2px solid #f1f1f1; /* Add a border for better visibility */
+    border-radius:15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for depth */
+    transition: transform 0.3s ease; /* Smooth zoom effect on hover */
+    cursor: pointer; /* Change cursor to pointer for better UX */
+    border-radius: 5px;
+    max-width: 100%; /* Ensure image is responsive */
+}
+.project img:hover {
+    transform: scale(1.05); /* Zoom effect on hover */
+}
+ .project-image {
+     width: 100%;
+     aspect-ratio: 3/2; /* Maintain a 3:2 aspect ratio */
+     object-fit: cover; /* Ensure the image covers the entire area */
+     border-radius: 5px; /* Add rounded corners */
+
+
+}
+
+.contact {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+    margin: 20px 0;
+    color: #2c3e50; /* Change text color for better contrast */
+}
+.contact h2 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+.contact form {
+    display: flex;
+    flex-direction: column; /* Stack form elements vertically */
+    gap: 15px; /* Add space between form elements */
+}
+.contact label {
+    font-weight: bold; /* Make labels bold for better visibility */
+}
+.contact input, .contact textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem; /* Adjust font size for better readability */
+}
+.contact input:focus, .contact textarea:focus {
+    border-color: #e98277; /* Change border color on focus */
+    outline: none; /* Remove default outline */
+}
+.contact button {
+    background: #e98277;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer; /* Change cursor to pointer for better UX */
+    font-size: 1rem; /* Adjust font size for better readability */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+.contact button:hover {
+    background: #e74c3c; /* Change background color on hover */
+}
+
+
+
+footer {
+    background: #2c3e50;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    position: relative; /* Ensure footer is positioned correctly */
+    bottom: 0; /* Stick to the bottom of the page */
+    width: 100%; /* Full width footer */
+}
+footer p {
+    margin: 0;
+    font-size: 1rem; /* Adjust font size for better readability */
+    color: #e9e4e3; /* Change text color for better contrast */
+    line-height: 1.5; /* Improve line spacing for readability */
+}
+footer a {
+    color: #e98277; /* Change link color for better contrast */
+    text-decoration: none;
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+footer a:hover {
+    color: #e74c3c; /* Change color on hover */
+}
+@media (max-width: 768px) {
+    footer {
+        padding: 15px 0; /* Adjust padding for smaller screens */
+    }
+    footer p {
+        font-size: 0.9rem; /* Slightly smaller font size */
+    }
+}
+html {
+    scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+}
+    footer a:hover {
+        color: #e74c3c; /* Change color on hover */
+    }
+
+footer a {
+    color: #e98277; /* Change link color for better contrast */
+    text-decoration: none;
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+    footer a:hover {
+        color: #e74c3c; /* Change color on hover */
+    }
+
+
+footer a {
+    color: #e9e4e3; /* Change link color for better contrast */
+    text-decoration: none;
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+@media (max-width: 768px) {
+    footer {
+        padding: 15px 0; /* Adjust padding for smaller screens */
+    }
+    footer p {
+        font-size: 0.9rem; /* Slightly smaller font size */
+    }
+}
+@media (max-width: 480px) {
+    footer p {
+        font-size: 0.8rem; /* Further reduce font size on very small screens */
+    }
+    footer a {
+        font-size: 0.9rem; /* Adjust link size for better readability */
+    }
+} 
+
+.footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content:space-evenly; /* Center the list items */
+    gap: 15px; /* Add space between items */
+    color: #5aa85e;
+    flex-wrap: wrap;
+    
+}
+.footer ul li {
+    display: inline; /* Keep items in a row */
+    color: #5aa85e;
+    font-size: 1rem; /* Adjust font size for better readability */
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+
+}
+.footer ul li a {
+    color: #5aa85e; /* Change link color for better contrast */
+    text-decoration: none;
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+.footer ul li a:hover {
+    color: #e74c3c; /* Change color on hover */
+}
+.footer ul li a {
+    color: #5aa85e; /* Change link color for better contrast */
+    text-decoration: none;
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+.footer ul li a:hover {
+    color: #e74c3c; /* Change color on hover */
+}
+.fas.fa-envelope {
+    color: #ce2525; /* Change icon color for better contrast */
+    font-size: 1.5rem; /* Adjust icon size for better visibility */
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+.fas.fa-phone {
+    color: #25ce2e; /* Change icon color for better contrast */
+    font-size: 1.5rem; /* Adjust icon size for better visibility */
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+.fab.fa-facebook {
+  color: #253ece;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+.fab.fa-instagram {
+    color: #e04646; /* Change icon color for better contrast */
+    font-size: 1.5rem; /* Adjust icon size for better visibility */
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+
+}
+.fab.fa-twitter {
+    color: #1DA1F2; /* Change icon color for better contrast */
+    font-size: 1.5rem; /* Adjust icon size for better visibility */
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+.fab.fa-linkedin {
+    color: #25bace; /* Change icon color for better contrast */
+    font-size: 1.5rem; /* Adjust icon size for better visibility */
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
